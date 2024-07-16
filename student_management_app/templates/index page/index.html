@@ -1,0 +1,233 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COLLEGE  INFORMATION  SYSTEM</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Hithaldia.jpg/1280px-Hithaldia.jpg') no-repeat center center fixed;
+      background-size: cover; 
+    }
+
+    header {
+      background-color: rgba(52, 152, 219, .7); 
+      color: white;
+      text-align: center;
+      padding: 1em;
+      margin-bottom: 20px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      background-color: rgba(44, 62, 80, 0.8); 
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-bottom: 2px solid rgba(52, 73, 94, 0.8); 
+      padding: 0 20px; 
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #ecf0f1;
+      font-weight: bold;
+      padding: 1em 1.5em; 
+      border-radius: 5px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    nav a:hover {
+      background-color: rgba(217, 236, 248, 0.8); 
+      animation: bubbleZoom 0.3s ease forwards;
+    }
+
+    @keyframes bubbleZoom {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .auth-buttons {
+      margin-left: auto;
+    }
+
+    .auth-buttons a {
+      text-decoration: none;
+      color: #ecf0f1;
+      font-weight: bold;
+      padding: 1em 1.5em; 
+      border-radius: 5px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .auth-buttons a:hover {
+      background-color: rgba(41, 128, 185, 0.8); 
+      animation: bubbleZoom 0.3s ease forwards;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    button {
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      background-color: rgba(233, 240, 241, 0.7); 
+      border: none;
+      padding: 2em;
+      cursor: pointer;
+      opacity: 2.5;
+      animation: fadeIn 1s ease-in-out forwards;
+      width: 100%;
+      transition: transform 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.07); 
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    button h2 {
+      color: #0b151f;
+      margin-bottom: 10px;
+    }
+
+    button p {
+      color: #363c49;
+    }
+    footer {
+            background-color: rgba(0, 89, 190, 0.5); 
+            color: #fff;
+            text-align: center;
+            padding: 5px 0; 
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            z-index: 1000;
+            height: 25px; 
+        }
+
+    @media (max-width: 800px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      main {
+        grid-template-columns: 1fr;
+      }
+
+      button {
+        padding: 1.5em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>COLLEGE  INFORMATION  SYSTEM</h1>
+  </header>
+
+  <nav>
+    <div class="nav">
+      <a href="\map">
+        <img src="{% static 'dist/img/maplogo.png' %}"
+        alt="map location"
+        width="50"
+        height="50">
+      </a>
+    </div>
+    <div style="margin-right: auto;"></div> 
+    <a href="/about">About</a>
+    <a href="/courses">Courses</a>
+    <a href="/facilities">Facilities</a>
+    <a href="/placement">Placement</a>
+    <a href="/admission">Admission</a>
+    <a href="/alumni">Alumni</a>
+
+    <div class="auth-buttons">
+      <a href="/login" class="btn btn-outline-success my-1 mx-2">Login</a>
+      <a href="/registration" class="btn btn-outline-success my-1 mx-2">Register</a>
+      <a href="/contact" class="btn btn-outline-danger my-1 mx-2">Contact Us</a>
+    </div>
+    
+  </nav>
+  <footer>
+    <p>&copy; 2024 Haldia Institute of Technology, All rights reserved </p>
+  </footer>
+
+  <main>
+    <a href="/about" target="_blank" class="button-link">
+      <button>
+          <h2>About Haldia Institute Of Technology</h2>
+          <p>Click to view more about Haldia Institute of Technology.</p>
+      </button>
+    </a>
+    <a href="/courses" target="_blank" class="button-link">
+      <button>
+          <h2>Department/Courses</h2>
+          <p>Click to view information about courses and departments.</p>
+      </button>
+    </a>
+
+    <a href="/facilities" target="_blank" class="button-link">
+      <button>
+          <h2>Facilities/Infrastructure</h2>
+          <p>Click to view details about the facilities and infrastructure of the college.</p>
+      </button>
+    </a>
+
+    <a href="/placement" target="_blank" class="button-link">
+      <button>
+          <h2>Training/Placement Cell</h2>
+          <p>Click to view information about the training and placement cell.</p>
+      </button>
+    </a>
+
+    <a href="/admission" target="_blank" class="button-link">
+      <button>
+          <h2>Admission</h2>
+          <p>Click to view details about the admission process.</p>
+      </button>
+    </a>
+    <a href="/alumni" target="_blank" class="button-link">
+      <button>
+          <h2>Notable Alumni</h2>
+          <p>Click to view details about our notable alumnis.</p>
+      </button>
+    </a>
+  </main>
+
+</body>
+</html>
+{% endblock content %}

@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connectivity</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #007bff; 
+        }
+        .footer {
+            background-color: #f8f9fa; 
+            padding: 20px 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+        
+        #map {
+            width: 100%;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Connectivity</a>
+            
+        </div>
+    </nav>
+
+    <!-- Map container -->
+    <div class="container mt-4">
+        <div class="row w-100">
+            <div class="col-lg-6 my-4">
+                <div id="map"></div>
+            </div>
+            <div class="col-lg-6 my-4 d-flex align-items-center">
+                <div>
+                    <h6>HALDIA INSTITUTE OF TECHNOLOGY</h6>
+                    <p>Try to resize your browser window - you will see that it starts to take up 12 columns on screens smaller than 992px.</p>
+                    <p>This useful feature helps to make your embedded map responsive (<strong>mobile friendly</strong>). You can customize responsive behavior with the use of <a href="https://mdbootstrap.com/docs/standard/layout/breakpoints/">breakpoints</a>.</p>
+                    <p>This text looks so nice because it's <strong>vertically centered</strong> you can achieve this effect using the <a href="https://mdbootstrap.com/docs/standard/layout/vertical-alignment/">vertical alignment</a> layout option.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">© 2024 Connectivity</span>
+            
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Google Maps JavaScript API -->
+    <script>
+        function initMap() {
+            // Location coordinates
+            var myLatLng = {lat: 22.0505921, lng: 88.0722126};
+
+            // Map options
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: myLatLng,
+                zoom: 17,
+                styles: [{
+                    "featureType": "all",
+                    "elementType": "geometry",
+                    "stylers": [{
+                        "color": "#ffffff" // Set the background color to white
+                    }]
+                }]
+            });
+
+            // Marker
+            var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                title: 'Haldia Institute of Technology'
+            });
+        }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBrEv0w8OIDA7bEltxljkMPqKZhN2nMJ64&callback=initMap">
+    </script>
+</body>
+</html>

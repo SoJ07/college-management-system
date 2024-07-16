@@ -1,0 +1,204 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://media.getmyuni.com/azure/college-images-test/haldia-institute-of-technology-hit-haldia/d72255c277494eb7ae1fcb668aa5fc40.jpeg') center/cover;
+
+            background-color: #708886;
+        }
+
+        header {
+            background-color: rgba(137, 137, 241, 0.5); 
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            position:relative;
+            top: 100px;
+            background-color: rgba(44, 62, 80, 0.8);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-bottom: 2px solid rgba(52, 73, 94, 0.8);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #ecf0f1;
+            font-weight: bold;
+            padding: 1em 2em;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+    }
+
+        nav a:hover {
+            background-color: rgba(193, 233, 228, 0.8);
+            transform: scale(1.05);
+    }
+
+        h1 {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        main {
+            padding-top: 100px; 
+            padding-bottom: 80px; 
+            display: flex;
+            flex-wrap: wrap;
+            overflow: hidden; 
+            margin-top: 120px; 
+        }
+
+        section {
+            width: calc(50% - 20px);
+            max-width: 400px; 
+            background-color: #fff;
+            border: 1px solid #ccc; 
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 15px auto 40px auto; 
+            opacity: 0; 
+            transform: scale(0.8); 
+            transition: opacity 0.5s ease, transform 0.5s ease; 
+            height: auto; 
+        }
+
+        h2 {
+            color: #333;
+            font-size: 1.5rem;
+            margin-top: 0;
+        }
+
+        p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: rgb(163, 163, 236,0.5); 
+            color: #fff;
+            text-align: center;
+            padding: 5px 0; 
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            z-index: 1000;
+            height: 25px; 
+        }
+
+        .admission-image {
+            width: 100%;
+            max-height: 250px; 
+            height: auto;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: transform 0.3s ease-in-out; 
+        }
+
+        .admission-image:hover {
+            transform: scale(1.1); 
+        }
+
+        
+        .animate {
+            opacity: 1; 
+            transform: scale(1); 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Admission</h1>
+    </header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">about</a>
+        <a href="/courses">Courses</a>
+        <a href="/placement">Placement</a>
+        <a href="/facilities">Facilities</a>
+        <a href="/alumni">Alumni</a>
+    
+    </nav>
+
+    <main>
+        <section id="fee-structure">
+            <h2>Fee Structure</h2>
+            <p>Description of the fee structure...</p>
+            <img class="admission-image" src="{% static 'dist/img/fees.png' %}" alt="Fee Structure">
+        </section>
+
+        <section id="department-admissions">
+            <h2>Department Admissions</h2>
+            <p>Description of the department admissions...</p>
+            <img class="admission-image" src="{% static 'dist/img/ug.png' %}" alt="Department Admissions">
+            <img class="admission-image" src="{% static 'dist/img/pg.png' %}" alt="Department Admissions">
+        </section>
+
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Haldia Institute of Technology, All rights reserved </p>
+    </footer>
+
+    <script>
+        // Function to handle intersection observer
+        function handleIntersect(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }
+
+        // Create intersection observer
+        const observer = new IntersectionObserver(handleIntersect, {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        });
+
+        // Observe each section
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Function to handle scrolling zoom effect
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const windowHeight = window.innerHeight;
+
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionBottom = sectionTop + sectionHeight;
+
+                const distanceToSection = Math.min(sectionBottom - scrollTop, scrollTop + windowHeight - sectionTop);
+                const scale = 1 + (distanceToSection / windowHeight) * 0.5;
+
+                section.style.transform = `scale(${scale})`;
+            });
+        });
+    </script>
+</body>
+</html>
+{% endblock content %}

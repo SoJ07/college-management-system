@@ -1,0 +1,390 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSE-AIML Page</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://source.unsplash.com/1600x900/?technology');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+
+        .navbar {
+            background-color: #343a40;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff !important;
+        }
+
+        .jumbotron {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 100px 0;
+            margin-bottom: 0;
+            text-align: center;
+        }
+
+        .jumbotron h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+        }
+
+        .jumbotron p {
+            font-size: 1.25rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .section-title {
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            color: #007bff;
+        }
+
+        .faculty-card, .subject-card {
+            margin-bottom: 30px;
+            background-color: #4b5275;
+            color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .faculty-card .card-body, .subject-card .card-body {
+            padding: 10px;
+        }
+
+        .scroll-container {
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .scroll-container .gallery-item {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .scroll-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">CSE-AIML</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#faculty">Faculty Details</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#subjects">Course Subjects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#gallery">Photo Gallery</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Jumbotron -->
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-4">Welcome to CSE-AIML</h1>
+        <p class="lead">Explore the world of Computer Science and Engineering with a focus on Artificial Intelligence and Machine Learning.</p>
+    </div>
+</div>
+
+<!-- About Section -->
+<section id="about" class="container py-5">
+    <h2 class="section-title">About CSE-AIML</h2>
+    <div class="container">
+        <p>CSE-AIML is a cutting-edge department that combines the principles of Computer Science with the latest advancements in Artificial Intelligence and Machine Learning.</p>
+        <p>Our mission is to train the next generation of AI experts and innovators who will revolutionize industries and drive technological progress.</p>
+    </div>
+</section>
+
+<!-- Faculty Details Section -->
+<section id="faculty" class="container py-5">
+    <h2 class="section-title">Faculty Details</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card faculty-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Dr. Subir Gupta</h5>
+                        <p class="card-text">HOD ,AIML</p>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="col-md-4">
+                <div class="card faculty-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Ms. Dipika Sarkar</h5>
+                        <p class="card-text">Assistant Professor ,AIML</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card faculty-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Sri Arpan Adhikary</h5>
+                        <p class="card-text">Assistant Professor ,AIML</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card faculty-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Sri Amrit Kumar</h5>
+                        <p class="card-text">Assistant Professor ,AIML</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card faculty-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Sri Soumojit Roy</h5>
+                        <p class="card-text">Assistant Professor ,AIML</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card faculty-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Sri Asit Kumar Nayek</h5>
+                        <p class="card-text">Assistant Professor ,AIML</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card faculty-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Sri Kamaluddin Mondal</h5>
+                        <p class="card-text">Assistant Professor ,AIML</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card faculty-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Mr. Dipankar Roy</h5>
+                        <p class="card-text">Assistant Professor,AIML</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card faculty-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Ms. Upasana Adhikari</h5>
+                        <p class="card-text">Assistant Professor,AIML</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card faculty-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Mrs. Shefali Varshney</h5>
+                        <p class="card-text">Assistant Professor,AIML</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card faculty-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Ms. Joyita Ghosh</h5>
+                        <p class="card-text">Assistant Professor,AIML</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card faculty-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Mr. Abhik Choudhary</h5>
+                        <p class="card-text">Assistant Professor,AIML</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- Course Subjects Section -->
+<section id="subjects" class="container py-5">
+    <h2 class="section-title">Course Subjects  <a href=https://drive.google.com/file/d/18RRTr-4GmvLtj0rQI7eLwp5Z5HZwc8BL/view?usp=sharing>(Syllabus PDF)</a></h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card subject-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Artificial Intelligence</h5>
+                        <p class="card-text">Introduction to AI concepts and applications.</p>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="col-md-4">
+                <div class="card subject-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Machine Learning</h5>
+                        <p class="card-text">Study of algorithms and statistical models.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card subject-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Data Science</h5>
+                        <p class="card-text">Exploration and analysis of large datasets.</p>
+                    </div>
+                </div>
+            </div>
+          
+            <div class="col-md-4">
+                <div class="card subject-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Computer Vision</h5>
+                        <p class="card-text">Understanding and processing visual data.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card subject-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Natural Language Processing</h5>
+                        <p class="card-text">Processing and understanding human language.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card subject-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Deep Learning</h5>
+                        <p class="card-text">Advanced techniques in neural networks.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card subject-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Reinforcement Learning</h5>
+                        <p class="card-text">Study of learning algorithms based on feedback.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card subject-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Big Data Analytics</h5>
+                        <p class="card-text">Analysis of large and complex datasets.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card subject-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Pattern Recognition</h5>
+                        <p class="card-text">Identification of patterns in data.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card subject-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Cloud Computing</h5>
+                        <p class="card-text">Study of distributed computing systems.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Photo Gallery Section -->
+<section id="gallery" class="container py-5">
+    <h2 class="section-title">Photo Gallery</h2>
+    <div class="container scroll-container">
+        <div class="row" id="galleryRow">
+            
+        </div>
+    </div>
+</section>
+
+<!-- Bootstrap JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+   
+    var imageUrls = [
+        "{% static 'dist/img/aiml_gallery.jpg' %}",
+        
+        "{% static 'dist/img/IMG_20240409_111954.jpg' %}",
+        "{% static 'dist/img/IMG_20240409_112020.jpg' %}",
+        "{% static 'dist/img/IMG_20240409_112246.jpg' %}",
+        "{% static 'dist/img/IMG_20240409_112436.jpg' %}",
+        "{% static 'dist/img/IMG_20240409_112518.jpg' %}",
+        "{% static 'dist/img/IMG_20240409_112348.jpg' %}",
+        "{% static 'dist/img/IMG_20240409_112401.jpg' %}",
+        "{% static 'dist/img/IMG_20240409_112418.jpg' %}",
+    ];
+
+    function createGallery() {
+        var galleryRow = document.getElementById('galleryRow');
+        imageUrls.forEach(function(url) {
+            var col = document.createElement('div');
+            col.className = 'col-md-4';
+            var galleryItem = document.createElement('div');
+            galleryItem.className = 'gallery-item';
+            var image = document.createElement('img');
+            image.src = url;
+            image.alt = 'Gallery Image';
+            galleryItem.appendChild(image);
+            col.appendChild(galleryItem);
+            galleryRow.appendChild(col);
+        });
+    }
+
+    window.onload = createGallery;
+</script>
+</body>
+</html>
+{% endblock content %}

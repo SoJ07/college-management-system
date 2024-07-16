@@ -1,0 +1,211 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLACEMENT</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://content.jdmagicbox.com/comp/midnapore/n9/9999p3222.3222.180825033623.p6n9/catalogue/haldia-institute-of-technology-midnapore-technical-institutes-qrq50jsyrx.jpg') center/cover;
+            color: #fff;
+
+        }
+
+        header {
+            background-color: rgba(0, 0, 255, 0.5); 
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin: 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            position:relative;
+            top: 100px;
+            background-color: rgba(44, 62, 80, 0.8);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-bottom: 2px solid rgba(52, 73, 94, 0.8);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #ecf0f1;
+            font-weight: bold;
+            padding: 1em 2em;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        nav a:hover {
+            background-color: rgba(193, 233, 228, 0.8);
+            transform: scale(1.05);
+        }
+
+        main {
+            padding-top: 100px; /* Adjusted padding to prevent content from being overlapped by the fixed header */
+            padding-bottom: 50px; /* Adjusted padding to prevent content from being overlapped by the fixed footer */
+            display: flex;
+            flex-wrap: wrap;
+            overflow: hidden; /* Hide overflowing content */
+            margin-top: 120px; /* Adjusted top margin to prevent overlap with navbar */
+        }
+
+        section {
+            width: calc(50% - 20px);
+            max-width: 500px; /* Added maximum width to prevent sections from becoming too wide */
+            background-color: #fff;
+            border: 1px solid #ccc; /* Minimal border */
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 15px auto 30px auto; /* Center sections horizontally and add bottom margin with reduced overlapping */
+            opacity: 0; /* Initially hide sections */
+            transform: scale(0.8); /* Initially scale down sections */
+            transition: opacity 0.5s ease, transform 0.5s ease; /* Transition for smoother animation */
+            height: auto; /* Set height to auto to adjust based on content */
+        }
+
+        h2 {
+            color: #333;
+            font-size: 1.5rem;
+            margin-top: 0;
+        }
+
+        p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: rgba(163, 163, 236, 0.5); /* Blue color */
+            color: #fff;
+            text-align: center;
+            padding: 5px 0; /* Smaller padding */
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            z-index: 1000;
+            height: 30px; /* Smaller height */
+        }
+
+        .facility-image {
+            width: 100%;
+            max-height: 200px; /* Added maximum height for the photos */
+            height: auto;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: transform 0.3s ease-in-out; /* Added transition for smoother image change */
+        }
+
+        .facility-image:hover {
+            transform: scale(1.1); /* Zoom effect on image hover */
+        }
+
+        /* Animation class */
+        .animate {
+            opacity: 1; /* Show sections */
+            transform: scale(1); /* Scale up sections */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PLACEMENT</h1>
+    </header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/courses">Courses</a>
+        <a href="/facilities">Facilities</a>
+        <a href="/admission">Admission</a>
+        <a href="/alumni">Alumni</a>
+    </nav>
+
+    <main>
+        <section id="about-tpo">
+            <h2>About TPO</h2>
+            <p>Description of the Training and Placement Office...</p>
+            <img class="facility-image" src="{% static 'dist/img/new.png' %}" alt="About TPO">
+        </section>
+
+        <section id="visited-companies">
+            <h2>Visited Companies</h2>
+            <p>List of companies visited for placement...</p>
+            <img class="facility-image" src="{% static 'dist/img/Companies.PNG' %}" alt="Visited Companies">
+        </section>
+
+        <section id="placement-status">
+            <h2>Placement Status</h2>
+            <p>Status of placement at the university...</p>
+            <img class="facility-image" src="{% static 'dist/img/placement_status.jpeg' %}" alt="Placement Status">
+        </section>
+        <section id="Internship Opportunity">
+            <h2>Internship Opportunity</h2>
+            <p>Status of Internship Opportunity at the university...</p>
+            <img class="facility-image" src="{% static 'dist/img/download.jpeg' %}" alt="Placement Status">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Haldia Institute of Technology, All rights reserved</p>
+    </footer>
+
+    <script>
+        // Function to handle intersection observer
+        function handleIntersect(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }
+
+        // Create intersection observer
+        const observer = new IntersectionObserver(handleIntersect, {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        });
+
+        // Observe each section
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Function to handle scrolling zoom effect
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const windowHeight = window.innerHeight;
+
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionBottom = sectionTop + sectionHeight;
+
+                const distanceToSection = Math.min(sectionBottom - scrollTop, scrollTop + windowHeight - sectionTop);
+                const scale = 1 + (distanceToSection / windowHeight) * 0.5;
+
+                section.style.transform = `scale(${scale})`;
+            });
+        });
+    </script>
+</body>
+</html>
+{% endblock content %}

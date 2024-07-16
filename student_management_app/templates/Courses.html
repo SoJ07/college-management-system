@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses - Haldia Institute Of Technology</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Hithaldiacampus.jpg/800px-Hithaldiacampus.jpg') center/cover;
+      color: #fff;
+    }
+
+    header {
+      background-color: rgba(52, 152, 219, 0.5);
+      text-align: center;
+      padding: 1em;
+      margin-bottom: 20px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: rgba(44, 62, 80, 0.8);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-bottom: 2px solid rgba(52, 73, 94, 0.8);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #ecf0f1;
+      font-weight: bold;
+      padding: 1em 2em;
+      border-radius: 5px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    nav a:hover {
+      background-color: rgba(193, 233, 228, 0.8);
+      transform: scale(1.05);
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    button {
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      background-color: rgba(236, 240, 241, 0.8);
+      border: none;
+      padding: 1em;
+      cursor: pointer;
+      opacity: 2.5;
+      animation: fadeIn 1s ease-in-out forwards;
+      width: 100%;
+      font-size: 1em;
+      transition: transform 0.3s;
+    }
+    button:hover {
+      transform: scale(1.07); 
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    button h2 {
+      color: #2c3e50;
+      margin-bottom: 10px;
+      font-size: 1.7em;
+    }
+
+    button p {
+      color: #7f8c8d;
+    }
+
+    @media (max-width: 800px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      main {
+        grid-template-columns: 1fr;
+      }
+    }
+    footer {
+            background-color: rgb(163, 163, 236,0.5); 
+            color: #fff;
+            text-align: center;
+            padding: 5px 0; 
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            z-index: 1000;
+            height: 25px; 
+        }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Courses - Haldia Institute Of Technology</h1>
+  </header>
+
+  <nav>
+    <a href="/about">About</a>
+    <a href="/">Home</a>
+    <a href="/facilities">Facilities</a>
+    <a href="/placement">Placement</a>
+    <a href="/admission">Admission</a>
+    <a href="/alumni">Alumni</a>
+
+  </nav>
+  <footer>
+    <p>&copy; 2024 Haldia Institute of Technology, All rights reserved </p>
+  </footer>
+
+  <main>
+    <button id="cse">
+      <h2>Computer Science and Engineering (CSE)</h2>
+      <p>Details about the Computer Science and Engineering department.</p>
+    </button>
+    <a href="/CSE-AIML" target="_blank" class="button-link">
+      <button id="cse-aiml">
+        <h2>CSE - Artificial Intelligence and Machine Learning (CSE-AIML)</h2>
+        <p>Details about the CSE-AIML course.</p>
+      </button>
+    </a>
+
+    <button id="cse-cs">
+      <h2>CSE - Cyber Security (CSE-CS)</h2>
+      <p>Details about the CSE-CS course.</p>
+    </button>
+
+    <button id="cse-ds">
+      <h2>CSE - Data Science (CSE-DS)</h2>
+      <p>Details about the CSE-DS course.</p>
+    </button>
+
+    <button id="civil">
+      <h2>Civil Engineering</h2>
+      <p>Details about the Civil Engineering department.</p>
+    </button>
+
+    <button id="mechanical">
+      <h2>Mechanical Engineering</h2>
+      <p>Details about the Mechanical Engineering department.</p>
+    </button>
+
+    <button id="electrical">
+      <h2>Electrical Engineering</h2>
+      <p>Details about the Electrical Engineering department.</p>
+    </button>
+
+    <button id="ece">
+      <h2>Electronics and Communication Engineering (ECE)</h2>
+      <p>Details about the ECE department.</p>
+    </button>
+
+    <button id="IT">
+      <h2>Information Technology(IT)</h2>
+      <p>Details about the IT department.</p>
+    </button>
+  </main>
+
+</body>
+</html>
+{% endblock content %}

@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Haldia Institute Of Technology</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('https://hithaldia.ac.in/2023/images/slider/banner2.jpg') center/cover;
+      color: #fff;
+    }
+
+    header {
+      background-color: rgba(52, 152, 219, 0.9);
+      text-align: center;
+      padding: 1em;
+      margin-bottom: 20px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: rgba(44, 62, 80, 0.8);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-bottom: 2px solid rgba(52, 73, 94, 0.8);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #ecf0f1;
+      font-weight: bold;
+      padding: 1em 2em;
+      border-radius: 5px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    nav a:hover {
+      background-color: rgba(193, 233, 228, 0.8);
+      transform: scale(1.1);
+    }
+
+    main {
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    section {
+      text-align: center;
+      background-color: rgba(236, 240, 241, 0.7);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 2em;
+      margin-bottom: 20px;
+    }
+
+    section h2 {
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+
+    section p {
+      color: #383e3f;
+    }
+    footer {
+            background-color: rgba(22, 64, 201, 0.5); /* Blue color */
+            color: #fff;
+            text-align: center;
+            padding: 5px 0; /* Smaller padding */
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            z-index: 1000;
+            height: 25px; /* Smaller height */
+        }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>About Haldia Institute Of Technology</h1>
+  </header>
+
+  <nav>
+    <a href="/">Home</a>
+    <a href="/courses">Courses</a>
+    <a href="/facilities">Facilities</a>
+    <a href="/placement">Placement</a>
+    <a href="/admission">Admission</a>
+    <a href="/alumni">Alumni</a>
+
+  </nav>
+  <footer>
+    <p>&copy; 2024 Haldia Institute of Technology, All rights reserved </p>
+  </footer>
+
+  <main>
+    <section>
+      <h2>Welcome to Haldia Institute Of Technology</h2>
+      <p>
+       Haldia Institute of Technology (An Institute of ICARE, Haldia, Approved by AICTE, Affiliated to WBUT)
+began its journey in the year 1996.
+It is the first private and accredited academic institution catering technical education in West Bengal. The Institute is situated at Haldia – an industrial hub in Eastern India. Since inception, Haldia Institute of Technology is dedicated to the objectives of creating highly trained professional manpower in various disciplines of Engineering, Technology and Social Science. The Institute is also dedicated to the contribution of higher scientific research in Technology as well as in Applied Science and Social Science.
+</p>
+    </section>
+
+    <!-- Add more sections about the institute as needed -->
+  </main>
+
+</body>
+</html>
+{% endblock content %}
